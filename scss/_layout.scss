@@ -1,0 +1,639 @@
+$color-dark: #262626;
+$color-black: #000;
+$color-primary: #d3ab55;
+$color-secondary: #bbb;
+
+$font-josef: "Josefin Sans";
+$font-sahel: sahel;
+$font-nastaliq: nastaliq;
+
+@font-face {
+  font-family: sahel;
+  src: url(../fonts/Sahel-Black.ttf) format("ttf"),
+    url(../fonts/Sahel-Black.woff) format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: nastaliq;
+  src: url(../fonts/IranNastaliq.ttf) format("ttf");
+}
+
+@mixin flexlayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center($topvalue) {
+  position: absolute;
+  top: $topvalue;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin card() {
+  position: relative;
+  width: 33%;
+  height: 30vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  @media(max-width:430px){
+      width: 100%;
+      height: 14rem;
+    }
+}
+
+@mixin overlay() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  background-color: rgba($color-primary, $alpha: 0.7);
+  flex-direction: column;
+  color: white;
+}
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+.berger-menu {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+  
+
+  i {
+    font-size: 35px;
+    color: $color-primary;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+.menu-navigator {
+  overflow: hidden;
+  visibility:hidden;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 5;
+  transition: all ease-in-out 1s;
+
+  &-left {
+    @media(max-width:430px){
+      display: none;
+      transition: all 0.1s;
+    }
+    left: -50vw;
+    z-index: 6;
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    background-color: $color-dark;
+    transition: all ease-in-out 0.7s;
+
+    img {
+      position: absolute;
+      width: 50%;
+      height: 30%;
+      border-radius: 10px;
+      box-shadow: 20px 15px 55px 0px rgba($color-primary, $alpha: 0.3);
+    }
+
+    .img1 {
+      top: 20%;
+      left: 17%;
+    }
+
+    .img2 {
+      top: 35%;
+      left: 27%;
+    }
+
+    .img3 {
+      top: 50%;
+      left: 37%;
+    }
+  }
+
+  &-right {
+    @media(max-width:430px){
+      width: 100vw !important;
+      transition: all0 0.1s;
+    }
+    right: -50vw;
+    z-index: 6;
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    background-color: $color-dark;
+    transition: all ease-in-out 0.7s;
+    
+
+    .menu-list {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 4.2em;
+      top: 15%;
+      right: 50%;
+      position: absolute;
+      @media(max-width:430px){
+        right: 35%;
+      }
+
+      &-item {
+        font-size: 2.1em;
+        @media(max-width:430px){
+          font-size: 1.3em;
+        }
+
+        a {
+          color: $color-secondary;
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// ++++++++++++++++++++++++++++++++
+
+
+
+
+
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(../images/35-percent-tint.png),
+    url(../images/images/bg.jpeg);
+  background-size: cover;
+
+  .brand {
+    @include center(15%);
+    @include flexlayout;
+    a{
+      @media(max-width: 770px){
+        font-size: 45px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    div h1 {
+      @media(max-width: 770px){
+        font-size: 35px;
+      }
+
+      @media(max-width:525px){
+        font-size: 25px;
+      }
+      @media(max-width:440px){
+        font-size: medium !important;
+      }
+
+    }
+
+
+    div p{
+      @media(max-width:525px){
+        font-size: 20px;
+      }
+    }
+
+  }
+
+  &-banner {
+    text-align: center;
+    @include center(50%);
+
+    .main-heading {
+      @media(max-width: 770px){
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+// ++++++++++++++++++++++++++++++
+
+.about-us {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+
+  .about-left {
+    width: 40%;
+    @media(max-width:770px){
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      opacity: 0.6;
+    }
+  }
+
+  .about-right {
+    @media(max-width:770px){
+      width: 100%;
+    }
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    .main-heading {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-family: $font-sahel;
+      font-weight: 300;
+      @media(max-width:430px){
+        font-size: 30px;
+      }
+    }
+
+    .sub-heading {
+      font-size: 60px;
+      margin-bottom: 20px;
+      @media(max-width:430px){
+        font-size: 25px;
+      }
+    }
+
+    .stars {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      i {
+        margin-left: 10px;
+        color: $color-primary;
+        font-size: 15px;
+      }
+    }
+
+    .description {
+      font-family: $font-nastaliq;
+      font-size: 20px;
+      color: $color-secondary;
+      text-align: justify;
+      direction: rtl;
+      @media(max-width:430px){
+        font-size: 15px;
+      }
+
+      &::first-letter {
+        padding-right: 40px;
+      }
+    }
+  }
+}
+
+// ++++++++++++++++++++++++++++++
+
+.cards-wrapper1 {
+  @include flexlayout();
+  flex-direction: row;
+  @media(max-width:430px){
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card1 {
+    @include card;
+    background-image: url(../images/images/gallery-img-1.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .card2 {
+    @include card;
+    background-image: url(../images/images/gallery-img-2.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .card3 {
+    @include card;
+    background-image: url(../images/images/gallery-img-3.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.cards-wrapper2 {
+  @include flexlayout();
+  flex-direction: row;
+  @media(max-width:430px){
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card4 {
+    @include card;
+    background-image: url(../images/images/gallery-img-4.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .card5 {
+    @include card;
+    background-image: url(../images/images/gallery-img-5.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .card6 {
+    @include card;
+    background-image: url(../images/images/gallery-img-6.jpeg);
+
+    &:hover .overlay {
+      left: 0;
+      transition: all 0.45s ease-in-out;
+    }
+
+    .overlay {
+      @include flexlayout();
+      @include overlay();
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        color: $color-primary;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// ++++++++++++++++++++++++++++++
+
+.footer-container {
+  @include flexlayout();
+  flex-direction: column;
+
+  .brand {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    line-height: 80px;
+    margin-bottom: 20px;
+
+    .logo{
+
+      @media(max-width: 770px){
+        font-size: 45px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    div h1{
+      @media(max-width: 770px){
+        font-size: 40px;
+
+        @media(max-width:525px){
+          font-size: 20px;
+        }
+      }
+    }
+    div p{
+      @media(max-width: 770px){
+        font-size: 23px;
+        line-height: 60px;
+      }
+      @media(max-width:525px){
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+  }
+
+  .social-media {
+    @include flexlayout();
+    flex-direction: row;
+
+    a {
+      margin-bottom: 29px;
+
+      i {
+        color: $color-primary;
+        font-size: 37px;
+        padding: 15px;
+        transition: all 0.35s;
+
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    p {
+      font-size: 20px;
+      color: $color-secondary;
+      margin-bottom: 16px;
+
+      @media(max-width:525px){
+        font-size: 12px;
+      }
+    }
+  }
+}

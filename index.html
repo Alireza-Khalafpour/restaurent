@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="fonts/IranNastaliq.ttf">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <script>
+        function showmenu() {
+            let icon = document.getElementById("icon");
+            let menu = document.getElementById("navigator");
+            let right = document.getElementById("right");
+            let left = document.getElementById("left");
+
+            if (menu.style.visibility == "hidden") {
+                right.style.right = "0vw";
+                left.style.left = "0vw";
+                menu.style.visibility = "visible";
+                icon.className="fas fa-window-close";
+
+            } else{
+                right.style = "right:-50vw;";
+                left.style = "left:-50vw;";
+                menu.style = "visibility:hidden;";
+                icon.className="fas fa-bars";
+            }
+
+        }
+
+    </script>
+
+
+
+    <div class="berger-menu">
+        <i class="fas fa-bars" onclick="showmenu()" id="icon"></i>
+    </div>
+
+    <div class="menu-navigator" id="navigator">
+        <div class="menu-navigator-left" id="left">
+            <img src="images/images/nav-img-1.jpeg" alt="food image" class="menu-img img1">
+            <img src="images/images/nav-img-2.jpeg" alt="food image" class="menu-img img2">
+            <img src="images/images/nav-img-3.jpeg" alt="food image" class="menu-img img3">
+        </div>
+
+        <div class="menu-navigator-right" id="right">
+
+            <ul class="menu-list">
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">خانه</a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">درباره ما</a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">گالری تصاویر</a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">رزرو میز</a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">سرویس ها</a>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-list-link">تماس با ما</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+    <header class="header">
+        <div class="brand">
+            <a href="#" class="logo">
+                <i class="fa fa-utensils"></i>
+            </a>
+            <div>
+                <h1 class="main-name">رستوران من</h1>
+                <p class="sub-name">غذا های لذیذ ما</p>
+            </div>
+        </div>
+
+        <div class="header-banner">
+            <h1 class="main-heading">خوش آمدید</h1>
+            <h3 class="sub-heading">.غذاهای ما را امتحان کنید</h3>
+            <button type="button" class="main-button">رزرو میز</button>
+        </div>
+
+    </header>
+
+
+    <section class="about-us">
+        <div class="about-left">
+            <img src="images/images/about-us-img.png" alt="about us">
+        </div>
+
+        <div class="about-right">
+            <h1 class="main-heading">درباره ی رستوران</h1>
+            <h3 class="sub-heading">درباره دست پخت من</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="description">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای م زبان فارسی ایجاد کرد. در این صورت می توان امید دا
+                ارائه راهکارها و شرایط سخت تایپ
+                به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
+                اساسا مورد استفاده قرار گیرد.
+            </p>
+            <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+
+            <button type="button" class="main-button">بیشتر بدانید</button>
+
+        </div>
+    </section>
+
+
+    <section class="gallery">
+
+        <div class="cards-wrapper1">
+
+            <div class="card1">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-wrapper2">
+
+            <div class="card4">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+            <div class="card5">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+            <div class="card6">
+                <div class="overlay">
+                    <h3>نام غذا</h3>
+                    <p>بها 100000</p>
+                    <button type="button" class="main-button">سفارش غذا</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="brand">
+                <a href="#" class="logo">
+                    <i class="fa fa-utensils"></i>
+                </a>
+                <div>
+                    <h1 class="main-name">رستوران من</h1>
+                    <p class="sub-name">غذا های لذیذ ما</p>
+                </div>
+            </div>
+
+            <div class="social-media">
+
+                <a href=""><i class="fab fa-facebook" title="Facebook"></i></a>
+                <a href=""><i class="fab fa-google-plus" title="Google+"></i></a>
+                <a href=""><i class="fab fa-instagram" title="Instagram"></i></a>
+                <a href=""><i class="fab fa-youtube" title="Youtube"></i></a>
+
+            </div>
+
+            <div class="copy-right">
+                <p>. کپی رایت. تمام حقوق این سایت متعلق به سازنده می باشد© </p>
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

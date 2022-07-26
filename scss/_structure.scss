@@ -1,0 +1,101 @@
+
+$color-dark:#262626;
+$color-black:#000;
+$color-primary:#d3ab55;
+$color-secondary:#bbb;
+
+
+@font-face{
+    font-family: sahel;
+    src: url(../fonts/Sahel-Black.ttf) format("ttf"), url(../fonts/Sahel-Black.woff) format("woff");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: nastaliq;
+    src: url(../fonts/IranNastaliq.ttf) format("ttf");
+}
+
+$font-josef:"Josefin Sans";
+$font-sahel:sahel,tahoma;
+$font-nastaliq:nastaliq,Tahoma;
+
+@mixin flexlayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center($topvalue) {
+    position: absolute;
+    top: $topvalue;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin card() {
+    position: relative;
+    width: 33%;
+    height: 30vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @media(max-width:430px){
+        width: 100%;
+        height: 14rem;
+      }
+}
+
+@mixin overlay() {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -100%;
+    background-color: rgba($color-primary, $alpha: 0.7);
+    flex-direction: column;
+    color: white;
+    
+}
+
+
+
+// ++++++++++++++++++++++++++++++++++
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $color-dark;
+    
+}
+
+a{
+    text-decoration: none;
+
+}
+
+ul li{
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

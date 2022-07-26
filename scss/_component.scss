@@ -1,0 +1,130 @@
+$color-dark: #262626;
+$color-black: #000;
+$color-primary: #d3ab55;
+$color-secondary: #bbb;
+
+$font-josef: "Josefin Sans";
+$font-sahel: sahel;
+$font-nastaliq: nastaliq;
+
+@font-face {
+  font-family: sahel;
+  src: url(../fonts/Sahel-Black.ttf) format("ttf"),
+    url(../fonts/Sahel-Black.woff) format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: nastaliq;
+  src: url(../fonts/IranNastaliq.ttf) format("ttf");
+}
+
+@mixin flexlayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin center($topvalue) {
+  position: absolute;
+  top: $topvalue;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin card() {
+    position: relative;
+    width: 33%;
+    height: 30vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @media(max-width:430px){
+        width: 100%;
+        height: 14rem;
+      }
+}
+
+@mixin overlay() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  background-color: rgba($color-primary, $alpha: 0.7);
+  flex-direction: column;
+  color: white;
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.logo {
+  @include flexlayout;
+  font-size: 80px;
+  width: 110px;
+  height: 110px;
+  color: $color-primary;
+  border: 3px solid $color-primary;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.main-name {
+  font-family: $font-sahel;
+  font-size: 50px;
+  color: $color-secondary;
+  font-weight: 300;
+  
+}
+
+.sub-name {
+  font-family: $font-nastaliq;
+  color: $color-primary;
+  text-align: center;
+  font-size: 30px;
+}
+
+.main-heading {
+  font-family: $font-sahel;
+  font-size: 60px;
+  color: $color-primary;
+  margin-bottom: 40px;
+  font-weight: 200;
+  @media (max-width: 525px) {
+    font-size: 20px;
+  }
+  @media(max-width:440px){
+    font-size: x-large !important;
+  }
+}
+
+.sub-heading {
+  font-family: $font-nastaliq;
+  font-weight: 300;
+  color: $color-secondary;
+  font-size: 25px;
+  margin-bottom: 80px;
+  @media(max-width:525px){
+    font-size: 15px;
+  }
+
+}
+
+.main-button {
+  @media (max-width: 770px) {
+    width: 120px;
+    height: 35px;
+    font-size: 23px;
+  }
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  background-color: transparent;
+  border: 3px solid $color-primary;
+  color: $color-primary;
+  &:hover {
+    background-color: $color-primary;
+    opacity: 0.7;
+    cursor: pointer;
+    color: $color-black;
+    transition: all 0.5s;
+  }
+}
